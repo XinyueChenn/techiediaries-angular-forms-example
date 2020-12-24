@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-forms-example';
+  exampleForm = new FormGroup ({
+    firstName: new FormControl(),
+    lastName: new FormControl(), 
+    alias: new FormArray([ new FormControl("") ])
+  });
+
+  addNewAlias() {
+    this.aliases.push(new FormControl(""));
+  }
+
+  get aliases() {
+    return this.exampleForm.get("alias") as FormArray;
+  }
 }

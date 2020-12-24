@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-forms-example"
+    }
+  },
+  "defaultProject": "angular-forms-example",
+  "cli": {
+    "analytics": false
+  }
 }
